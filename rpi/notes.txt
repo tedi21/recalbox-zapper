@@ -1,0 +1,10 @@
+Libraries : 
+https://gitlab.com/recalbox/recalbox
+https://github.com/labapart/gattlib
+
+Compilation :
+X86: 
+gcc blue2.c -lglib-2.0 -lgattlib -lpthread -lSDL2 -lSDL2_ttf -lSDL2_image -lm -o blue -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/glib-2.0
+
+ARM:
+../recalbox-rpi3/output/host/usr/bin/arm-buildroot-linux-gnueabihf-gcc --sysroot=../recalbox-rpi3/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot blue2.c -o rblue -I../recalbox-rpi3/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/include -I../recalbox-rpi3/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib32/glib-2.0/include -I../recalbox-rpi3/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/include/glib-2.0 -I../gattlib-master/include -L../gattlib-master/rpi/bluez -lgattlib -lglib-2.0 -lpthread -lSDL2 -lSDL2_ttf -lSDL2_image -lm
